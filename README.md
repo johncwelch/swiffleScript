@@ -1,2 +1,2 @@
 # swiffleScript
-Defining a replcaement for AppleScript
+Defining a replacement for AppleScript
