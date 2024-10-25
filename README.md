@@ -29,3 +29,4 @@ So with that in mind, swiffleScript (a really bad combination of swift and Apple
 10. As is this one
 
 more to come, but I have to poop.
+Done pooping, but 9 & 10 are still blank for now
