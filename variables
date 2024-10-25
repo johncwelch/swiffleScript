@@ -4,5 +4,44 @@ While I'd like to gleep the powershell thing of starting them with $, that might
 
 So barring someone coming up with a common character as a variable prefix, we'll go with the swift guidelines for variable names, namely no prefix
 
-Constants verses not
+	Parameters: prefixed by a dash. 
 
+Constants versus not constants
+	As is clear, one of the things I detest about Swift is var/let. "var" makes sense, you're declaring a variable. I'd also allow people to type out the full word "variable" (really, you won't die if you have to type more than the absolute minimum amount of characters. Tab-completion is a thing, and hey! you may enjoy communicating with full words. Give it a try.) But the "let" thing has never made any damned sense. So swiffleScript will not use "let" for constants. Instead there's going to be two ways in swiffleScript.
+	
+	The first, fast way will be similar to swift: variable or var prefixes for mutable vars, constant or const for constants. so:
+	var myMutableVar
+	variable myMutableVar
+	const myConst
+	constant myConstant
+	
+	Type inference will handle what a thing is based on the value in this case, so: var myVar = "string" is a string and so on
+	
+	But swiffleScript will also allow better parameters for vars, so
+	
+	<var/variable> <varName> -type [type] -value <value> -scope [scope]
+	<const/constant> <constName> -type [type] -value <value> -scope [scope]
+	
+	(Initially, there's not a public/private type ala other things, but that could change)
+	
+	mandatory parameters
+		var/variable and const/constant prefixes
+		variable name, any legal string allowed in Swift as a variable name that is not a keyword, also cannot be a dash as that is a parameter prefix
+		value of the variable. Note that "" and nil/null are allowed values
+
+	Optional parameters
+		type: explicitly typing the var including but not permanently limited to
+			int/integer: 64-bit int. Swift has different options, swiffleScript has one that covers 100% of need
+				initially, there's no unsigned type. May be added later
+			float: 64-bit floating point number
+			binary: 0b As Per Swift (APS)
+			octal: 0o APS
+			hex: 0x APS
+			Boolean: true/false APS
+				note, as per swift, only true/false are boolean. 1/0 are not substitutes
+			Optionals do not exist in swiffleScript. A thing either is or is not, optionals are counter to the first prinicple of swiffleScript and so are not a part of swiffleScript
+			Tuples are allowed and generally are APS.
+			
+Comments: APS
+
+There are no required line-ending characters ala ;. There's also not multiple statements per line except in parentheticals ala AppleScript and every other language. outside of that, you will not die if you have to use two lines for two instructions, I checked, and it is more in keeping with the first principle of swiffleScript
