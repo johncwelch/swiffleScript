@@ -41,6 +41,11 @@ Constants versus not constants
 				note, as per swift, only true/false are boolean. 1/0 are not substitutes
 			Optionals do not exist in swiffleScript. A thing either is or is not, optionals are counter to the first prinicple of swiffleScript and so are not a part of swiffleScript
 			Tuples are allowed and generally are APS.
+		
+		scope:
+			this is pretty straightforward initially.
+			global: a global variable. It's scripting, these are used more than you think. As well, if a var is set to global, *regardless of where it is*, it is *always* gloabl. periodt.
+			local: the default, local to wherever they are declared. If declared outside of say an if statement, then they do not have to be redeclared in the if statement, nor can that same varname be used for something else in the if statement. If a variable is initially declared in an if statement or similar, then it only exists in that statement.
 			
 Comments: APS
 
