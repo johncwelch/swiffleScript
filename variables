@@ -1,1 +1,8 @@
+Variables. These are kind of important right? So how do we manage them?
+
+While I'd like to gleep the powershell thing of starting them with $, that might get certain MS Legal Overlords upset. Also, while it's handy, i think it can lead to other issues.
+
+So barring someone coming up with a common character as a variable prefix, we'll go with the swift guidelines for variable names, namely no prefix
+
+Constants verses not
 
