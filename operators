@@ -1,1 +1,9 @@
-Operators
+Operators 
+
+In general, operators are APS. However, there are exceptions: 
+
+1) No ternary conditionals. The syntax on those is obtuse for the new person, and honestly, having to type out a full if statement is not a fate worse than death. It's not even worse than stepping on a Lego. You'll be fine 
+ 
+2) As swiffleScript has no optionals, there's no need for a nil coalescing operator 
+
+That's really it. The range operators and logical operators in Swift are fine for swiffleScript
