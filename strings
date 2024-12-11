@@ -1,0 +1,53 @@
+Strings and Characters
+
+For the most part, logically, these are APS, with a few exceptions:
+
+The multiline string literal surrounded by three quotation marks is just no. Why? Why are you like this swift when regular quotes work find for any amount of lines. Get help, there's no need for this kind of complication.
+
+While there's no reason to exclude the explicit \ line break, not really, it just seems excessive. Line endings exist and can be parsed, why add a \ to an existing line ending to do the same thing. So they can be swiffleScript, but I question why.
+
+string escape character is \, because it's the most common one and swift uses it anyway.
+
+There's no explict char type, that would just be a one character string. I don't care what C does.
+
+String init is similar to swift, either:
+
+	var/const varName -type String 
+	var/const varName ""
+	
+	if -type String is used and no -value provided, the string is created as an empty string
+	
+	Strings have properties so you can work with individual characters ala swift. So:
+	
+	for <charvar> in "string literal"/stringVar {
+		charVar <or print(charVar)
+	}
+	
+	will print every character in the string literal or the stringVar one at a time. I'm stealing a bit from PowerShell where the var name with nothing else displays the content of the variable on the screen. It's pretty handy.
+	
+	Strings should also work array-ish so that stringVar[0] will display the first character in the string. Turns out swift agrees. So string indices should work APS
+	
+	I'm thinking there should also be a thing from AppleScript where "first character of stringVar" is the first character of the stringVar, direct positional references are handy.
+	
+	Concatenation will be via the + sign APS. Let's keep that simple and absolutely consistent.
+	
+	I don't *like* the string interpolation thing in swift, I much prefer how PowerShell does it, but there's nothing BAD about it, and it does make it more obvious as to what's going on, which is of real value, so that can be a part of swiffleScript.
+	
+	Unicode is directly supported by swiffleScript, we are in the 21st century after all
+	
+	counting characters in a string is APS. stringVar.count is clear and obvious.
+	
+	Being able to arbitrarily add/remove characters or strings at a specific position in a string is useful, but the way swift does it is kind of bonkers. So instead of the whole multiclause thing with colons and the like, let's keep it simple:
+	
+	var stringvar = "theString"
+	stringVar.count would be 9
+	insert "!" after stringVar.last
+		theString!
+	insert "!" after (stringVar.count - 1)
+		theString!
+	insert "!" at stringVar[3]
+		the!String
+		
+		before/after/at should conceptually work APS even though the implementation would be simpler and FAR easier to read and learn.
+		
+		
